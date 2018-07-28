@@ -12,7 +12,7 @@ async def on_ready():
     print(f'BOT ONLINE - {client.user.name}')
     print(f'ID DO BOT {client.user.id}')
 
-# Mensagem de boas vindas
+# Welcome Message
 @client.event
 async def on_member_join(member):
     canal = client.get_channel('450911361543831552') # ID of channel Welcome
@@ -36,7 +36,7 @@ async def on_member_join(member):
     fundo = Image.open('bemvindo.png')
     fonte = ImageFont.truetype('BebasNeue.ttf', 45)
     escrever = ImageDraw.Draw(fundo)
-    escrever.text(xy=(180, 174), text=member.name, fill=(53, 59, 72), font=fonte)
+    escrever.text(xy=(180, 174), text=member.name, fill=(53, 59, 72), font=fonte) # output name when the user join!
     fundo.paste(avatar, (40, 90), avatar)
     fundo.save('bv.png')
     await client.send_file(canal, 'bv.png')
