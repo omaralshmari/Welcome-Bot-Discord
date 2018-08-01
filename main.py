@@ -41,4 +41,6 @@ async def on_member_join(member):
     fundo.save('bv.png')
     await client.send_file(canal, 'bv.png')
 
-client.run("YOUR_TOKEN_BOT")
+
+client.login(process.env.BOT_TOKEN); 
+
